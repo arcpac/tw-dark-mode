@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/output.css" rel="stylesheet">
+
+    <title>DarkMode</title>
+
+    <style>
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #68d391;
+        }
+
+        .toggle-checkbox:checked+.toggle-label {
+            background-color: #68d391;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container border border-black mx-auto">
+        <div
+            class="relative inline-block w-10 mr-2 ml-6 align-middle select-none transition duration-200 ease-in items-center">
+            <input type="checkbox" name="toggle" id="toggle"
+                class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" />
+            <label for="toggle"
+                class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+        </div>
+        <div class="grid place-items-center p-10">
+            <div
+                class="max-w-sm p-6 bg-whiterounded-lg shadow-md dark:bg-gray-800">
+                <a href="#">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Day and Nights</h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Make sure to switch of the lights mate!</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('toggle').addEventListener('change', function () {
+          if (this.checked) {
+            document.documentElement.classList.add('dark')
+          } else {
+            document.documentElement.classList.remove('dark')
+          }
+        })
+      </script>
+</body>
+
+</html>
